@@ -1,70 +1,23 @@
-<!-- header.html -->
-<header class="site-header" role="banner">
-  <div class="hdr">
+<header class="site-header">
+  <div class="container nav-wrap">
     <!-- الشعار -->
-    <a class="brand" href="index.html" aria-label="العودة للرئيسية">
-      <span class="logo-wrap">
-        <img src="./Modern%20Letter%20AS%20Logo%20Instagram%20Post.png" alt="Innovative Logo" class="logo-img">
-      </span>
-      <div class="branding">
-        <strong class="brand-title">Innovative</strong>
-        <small class="muted">Marketing Agency</small>
-      </div>
+    <a href="index.html" class="brand">
+      <img src="media/Modern%20Letter%20AS%20Logo%20Instagram%20Post.png" alt="Logo" class="brand-logo">
+      <span class="brand-name">الحلول المبتكرة للخدمات التسويقية</span>
     </a>
 
-    <!-- القائمة -->
-    <nav id="primaryNav" class="nav" aria-label="التنقل الرئيسي">
-      <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="index.html#services">الخدمات</a></li>
-        <li><a href="about.html">من نحن</a></li>
-        <li><a href="index.html#work">أعمالنا</a></li>
-        <li><a href="index.html#contact">تواصل معنا</a></li>
-      </ul>
+    <!-- قائمة التنقل -->
+    <nav id="mainNav" class="main-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="index.html#services">الخدمات</a>
+      <a href="about.html">من نحن</a>
+      <a href="index.html#works">أعمالنا</a>
+      <a href="index.html#contact" class="btn btn-primary">تواصل معنا</a>
     </nav>
 
-    <!-- زر القائمة (موبايل) -->
-    <button id="navToggle" class="nav-toggle" aria-label="إظهار/إخفاء القائمة" aria-controls="primaryNav" aria-expanded="false">☰</button>
+    <!-- زر القائمة للموبايل -->
+    <button id="menuToggle" aria-label="القائمة">
+      ☰
+    </button>
   </div>
 </header>
-
-<style>
-  .site-header {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    border-bottom: 1px solid #eaeef3;
-    z-index: 1000;
-  }
-  .hdr {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: .8rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  .brand {display: flex;align-items: center;gap: .6rem;text-decoration: none;color:#000;}
-  .logo-wrap {width: 42px;height: 42px;}
-  .logo-img {width:100%;height:auto}
-  .nav ul {display:flex;gap:1.2rem;list-style:none;margin:0;padding:0}
-  .nav a {text-decoration:none;color:#000;font-weight:500}
-  .nav a:hover {color:#2563eb}
-  .nav-toggle {display:none}
-  @media (max-width: 980px){
-    .nav {display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:1rem}
-    .nav.open {display:block}
-    .nav ul {flex-direction:column;gap:.8rem}
-    .nav-toggle {display:inline-block}
-  }
-</style>
-
-<script>
-  const toggle=document.getElementById('navToggle');
-  const nav=document.getElementById('primaryNav');
-  toggle?.addEventListener('click',()=>{
-    const open=nav?.classList.toggle('open');
-    toggle.setAttribute('aria-expanded',String(!!open));
-  });
-</script>
